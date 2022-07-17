@@ -1,8 +1,14 @@
 package com.example.demo.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.eclipse.collections.impl.set.mutable.UnifiedSet;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class StockGeneralResponse<T> {
     private T response;
 
@@ -10,8 +16,6 @@ public class StockGeneralResponse<T> {
 
     private UnifiedSet<String> userMessages = UnifiedSet.newSet();
 
-    public StockGeneralResponse() {
-    }
 
     public StockGeneralResponse(T response, HttpStatus httpStatus) {
         this.response = response;
