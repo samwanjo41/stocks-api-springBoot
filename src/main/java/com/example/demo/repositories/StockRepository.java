@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StockRepository extends MongoRepository<Stock, String> {
+    Stock findBySymbol(String Symbol);
+    void deleteDistinctBySymbol(String symbol);
 }

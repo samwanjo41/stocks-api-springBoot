@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,10 +11,13 @@ import org.eclipse.collections.impl.set.mutable.UnifiedSet;
 @NoArgsConstructor
 @Data
 public class StockGeneralResponse<T> {
+    @JsonProperty("response")
     private T response;
 
+    @JsonProperty("status")
     private HttpStatus httpStatus;
 
+    @JsonProperty("userMessages")
     private UnifiedSet<String> userMessages = UnifiedSet.newSet();
 
 
